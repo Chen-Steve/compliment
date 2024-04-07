@@ -1,9 +1,9 @@
 {
   "name": "git-complimenter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Compliments you for every commit!",
   "bin": {
-    "compliment": "./compliment.js"
+    "compliment": "compliment.js"
   },
   "scripts": {
     "postinstall": "node install.js"
