@@ -16,8 +16,32 @@ You can install `complimenter` globally on your machine using npm. This enables 
 npm install -g complimenter
 ```
 
+## Setup
+To ensure complimenter functions correctly, you'll need to set up your Git environment to use a custom directory for Git hooks.
+
+For Unix/Linux/macOS Users:
+Run the following command in your terminal:
+
+```bash
+mkdir -p ~/.git-templates/hooks
+git config --global init.templateDir '~/.git-templates'
+```
+
+This creates a .git-templates/hooks directory in your home folder and configures Git to use it as the template directory.
+
+# For Windows Users (PowerShell):
+Run the following command in PowerShell:
+
+```bash
+$TemplateHooksPath = Join-Path -Path $HOME -ChildPath ".git-templates\hooks"
+if (-Not (Test-Path -Path $TemplateHooksPath)) {
+    New-Item -ItemType Directory -Path $TemplateHooksPath
+}
+git config --global init.templateDir $TemplateHooksPath
+```
+
 # Usage
-After installation, proceed with your Git operations as usual. complimenter works in the background, and you will see a compliment appear in your terminal after each commit you make.
+After installation and setup, proceed with your Git operations as usual. complimenter works in the background, and you will see a compliment appear in your terminal after each commit you make.
 
 There's no additional setup required in your project. Just keep committing, and complimenter will keep the compliments coming.
 

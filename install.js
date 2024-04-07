@@ -3,36 +3,39 @@
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
+const { execSync } = require("child_process");
 
-// Get the path to the Node.js executable
+// Paths
+const templateDirPath = path.join(os.homedir(), '.git-templates', 'hooks');
+const hookScriptPath = path.join(templateDirPath, "post-commit"); // Assuming your hook is a post-commit hook
 const nodePath = process.execPath;
-// Construct the path to compliment.js assuming it's in the same directory as install.js
 const complimentScriptPath = path.join(__dirname, "compliment.js");
-// Define the path for the post-commit hook in the user's home directory
-const hookPath = path.join(
-  os.homedir(),
-  ".git-templates",
-  "hooks",
-  "post-commit"
-);
 
-// Construct the hook script with dynamic paths
+// Hook script
 const hookScript = `
 # Git-Complimenter Hook Start
 "${nodePath}" "${complimentScriptPath}"
 # Git-Complimenter Hook End
 `;
 
-// Ensure the hook directory exists
-fs.mkdirSync(path.dirname(hookPath), { recursive: true });
+// Ensure the template hooks directory exists
+fs.mkdirSync(templateDirPath, { recursive: true });
+
+// Configure Git to use the .git-templates directory, if not already set
+const currentTemplateDir = execSync('git config --global init.templateDir').toString().trim();
+if (!currentTemplateDir) {
+  execSync(`git config --global init.templateDir "${templateDirPath}"`);
+  console.log('Configured Git to use .git-templates for hooks.');
+}
 
 // Append the hook script to the post-commit hook, creating it if it doesn't exist
-if (fs.existsSync(hookPath)) {
-  let content = fs.readFileSync(hookPath, "utf8");
-  // Avoid duplicating the hook script if it's already there
+if (fs.existsSync(hookScriptPath)) {
+  let content = fs.readFileSync(hookScriptPath, "utf8");
   if (!content.includes("# Git-Complimenter Hook Start")) {
-    fs.appendFileSync(hookPath, hookScript);
+    fs.appendFileSync(hookScriptPath, hookScript);
+    console.log('Git Complimenter hook installed.');
   }
 } else {
-  fs.writeFileSync(hookPath, hookScript);
+  fs.writeFileSync(hookScriptPath, hookScript);
+  console.log('Git Complimenter hook installed.');
 }

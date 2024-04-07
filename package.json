@@ -1,6 +1,6 @@
 {
   "name": "complimenter",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Compliments you for every commit!",
   "bin": {
     "compliment": "compliment.js"
