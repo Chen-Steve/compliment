@@ -29,7 +29,7 @@ git config --global init.templateDir '~/.git-templates'
 
 This creates a .git-templates/hooks directory in your home folder and configures Git to use it as the template directory.
 
-# For Windows Users (PowerShell):
+## For Windows Users (PowerShell):
 Run the following command in PowerShell:
 
 ```bash
@@ -40,21 +40,21 @@ if (-Not (Test-Path -Path $TemplateHooksPath)) {
 git config --global init.templateDir $TemplateHooksPath
 ```
 
-# Usage
+## Usage
 After installation and setup, proceed with your Git operations as usual. complimenter works in the background, and you will see a compliment appear in your terminal after each commit you make.
 
 There's no additional setup required in your project. Just keep committing, and complimenter will keep the compliments coming.
 
-# How It Works
+## How It Works
 complimenter uses a Git post-commit hook to execute a script that outputs a random compliment. This hook is triggered after every commit you make to a Git repository.
 
-# Customizing Compliments
+## Customizing Compliments
 Feel free to fork the project and customize the list of compliments. This allows you to personalize your experience or add context-specific encouragement for you and your team.
 
-# Contributing
+## Contributing
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-# Fork the Project
+## Fork the Project
 Create your Feature Branch (git checkout -b feature/AmazingFeature)
 Commit your Changes (git commit -m 'Add some AmazingFeature')
 Push to the Branch (git push origin feature/AmazingFeature)
