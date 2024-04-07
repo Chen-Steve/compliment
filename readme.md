@@ -1,6 +1,6 @@
 # git-complimenter
 
-A delightful npm package designed to boost your spirits! `git-complimenter` compliments you every time you commit to a Git repository. Dive into a coding session accompanied by positivity and encouragement.
+A delightful npm package designed to boost your spirits! `git-complimenter` compliments you every time you commit to a Git repository.
 
 ## Features
 

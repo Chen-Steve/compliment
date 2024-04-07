@@ -1,6 +1,6 @@
 {
-  "name": "git-complimenter",
-  "version": "1.1.0",
+  "name": "complimenter",
+  "version": "1.2.0",
   "description": "Compliments you for every commit!",
   "bin": {
     "compliment": "compliment.js"
@@ -9,5 +9,8 @@
     "postinstall": "node install.js"
   },
   "author": "Steven Chen",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0"
+  }
 }
