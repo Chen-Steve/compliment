@@ -1,6 +1,6 @@
-# git-complimenter
+# complimenter
 
-A delightful npm package designed to boost your spirits! `git-complimenter` compliments you every time you commit to a Git repository.
+A delightful npm package designed to boost your spirits! `complimenter` compliments you every time you commit to a Git repository.
 
 ## Features
 
@@ -10,19 +10,19 @@ A delightful npm package designed to boost your spirits! `git-complimenter` comp
 
 ## Installation
 
-You can install `git-complimenter` globally on your machine using npm. This enables the compliments to be available across all your Git repositories.
+You can install `complimenter` globally on your machine using npm. This enables the compliments to be available across all your Git repositories.
 
 ```bash
-npm install -g git-complimenter
+npm install -g complimenter
 ```
 
 # Usage
-After installation, proceed with your Git operations as usual. git-complimenter works in the background, and you will see a compliment appear in your terminal after each commit you make.
+After installation, proceed with your Git operations as usual. complimenter works in the background, and you will see a compliment appear in your terminal after each commit you make.
 
-There's no additional setup required in your project. Just keep committing, and git-complimenter will keep the compliments coming.
+There's no additional setup required in your project. Just keep committing, and complimenter will keep the compliments coming.
 
 # How It Works
-git-complimenter uses a Git post-commit hook to execute a script that outputs a random compliment. This hook is triggered after every commit you make to a Git repository.
+complimenter uses a Git post-commit hook to execute a script that outputs a random compliment. This hook is triggered after every commit you make to a Git repository.
 
 # Customizing Compliments
 Feel free to fork the project and customize the list of compliments. This allows you to personalize your experience or add context-specific encouragement for you and your team.
